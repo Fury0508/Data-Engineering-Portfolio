@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import ContactModal from "@/components/ui/ContactModal";
 import TypingEffect from "@/components/ui/TypingEffect";
-import profileImage from "../assets/me.JPG";
+import profileImage from "../assets/me.jpg";
 import React, { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
