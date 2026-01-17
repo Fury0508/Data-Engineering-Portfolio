@@ -1,4 +1,4 @@
 {
-  "name": "ioannismesionis-mle",
+  "name": "Dhananjaygupta-DE",
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
