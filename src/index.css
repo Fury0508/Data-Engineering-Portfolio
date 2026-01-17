@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #fef3c7;
+  --secondary-background: #ffffff;
+  --foreground: #92400e;
+  --main-foreground: #1c1917;
+  --main: #facc15;
+  --border: #a16207;
+  --ring: #facc15;
+  --overlay: rgba(146, 64, 14, 0.8);
+  --shadow: -4px 4px 0px 0px var(--border);
+  --chart-1: #fef3c7;
+  --chart-2: #facc15;
+  --chart-3: #a16207;
+  --chart-4: #92400e;
+  --chart-5: #fde047; /* Added soft accent */
+  --chart-active-dot: #1c1917;
+}
+
+.dark {
+  --background: #1c1917;
+  --secondary-background: #292524;
+  --foreground: #fbbf24;
+  --main-foreground: #1c1917;
+  --main: #facc15;
+  --border: #a16207;
+  --ring: #facc15;
+  --shadow: -4px 4px 0px 0px var(--border);
+  --chart-1: #fde047;
+  --chart-2: #facc15;
+  --chart-3: #a16207;
+  --chart-4: #fefce8;
+  --chart-5: #fbbf24;
+  --chart-active-dot: #fff;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-fast {
+  animation: float 2s ease-in-out infinite;
+}
+
+@theme inline {
+  --color-main: var(--main);
+  --color-background: var(--background);
+  --color-secondary-background: var(--secondary-background);
+  --color-foreground: var(--foreground);
+  --color-main-foreground: var(--main-foreground);
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --spacing-boxShadowX: -4px;
+  --spacing-boxShadowY: 4px;
+  --spacing-reverseBoxShadowX: --4px;
+  --spacing-reverseBoxShadowY: -4px;
+  --radius-base: 10px;
+  --shadow-shadow: var(--shadow);
+  --font-weight-base: 500;
+  --font-weight-heading: 700;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-foreground font-base bg-background;
+    /* The global transition above will handle the body's background and text color changes. */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@theme {
+  --font-base: "JetBrains Mono", monospace;
+  --font-heading: "Roboto Mono", monospace;
+}
