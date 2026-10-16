@@ -1,110 +1,105 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
 @import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #fef3c7;
-  --secondary-background: #ffffff;
-  --foreground: #92400e;
-  --main-foreground: #1c1917;
-  --main: #facc15;
-  --border: #a16207;
-  --ring: #facc15;
-  --overlay: rgba(146, 64, 14, 0.8);
-  --shadow: -4px 4px 0px 0px var(--border);
-  --chart-1: #fef3c7;
-  --chart-2: #facc15;
-  --chart-3: #a16207;
-  --chart-4: #92400e;
-  --chart-5: #fde047; /* Added soft accent */
-  --chart-active-dot: #1c1917;
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --fg: #0f172a;
+  --muted: #526071;
+  --line: #e2e6ec;
+  --accent: #0f766e;
+  --accent-soft: #ccfbf1;
+  --accent-fg: #ffffff;
+  --bronze: #b4652a;
+  --silver: #6b7a8c;
+  --gold: #a87c06;
+  --grid: rgba(15, 23, 42, 0.05);
 }
 
 .dark {
-  --background: #1c1917;
-  --secondary-background: #292524;
-  --foreground: #fbbf24;
-  --main-foreground: #1c1917;
-  --main: #facc15;
-  --border: #a16207;
-  --ring: #facc15;
-  --shadow: -4px 4px 0px 0px var(--border);
-  --chart-1: #fde047;
-  --chart-2: #facc15;
-  --chart-3: #a16207;
-  --chart-4: #fefce8;
-  --chart-5: #fbbf24;
-  --chart-active-dot: #fff;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-.animate-float-slow {
-  animation: float 6s ease-in-out infinite;
-}
-.animate-float-fast {
-  animation: float 2s ease-in-out infinite;
+  --bg: #0a0e13;
+  --surface: #10161d;
+  --surface-2: #151c25;
+  --fg: #e6edf3;
+  --muted: #8d9aa8;
+  --line: #1f2a36;
+  --accent: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --accent-fg: #04201d;
+  --bronze: #d98a52;
+  --silver: #a3b1c2;
+  --gold: #e3b341;
+  --grid: rgba(230, 237, 243, 0.04);
 }
 
 @theme inline {
-  --color-main: var(--main);
-  --color-background: var(--background);
-  --color-secondary-background: var(--secondary-background);
-  --color-foreground: var(--foreground);
-  --color-main-foreground: var(--main-foreground);
-  --color-border: var(--border);
-  --color-overlay: var(--overlay);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  --spacing-boxShadowX: -4px;
-  --spacing-boxShadowY: 4px;
-  --spacing-reverseBoxShadowX: --4px;
-  --spacing-reverseBoxShadowY: -4px;
-  --radius-base: 10px;
-  --shadow-shadow: var(--shadow);
-  --font-weight-base: 500;
-  --font-weight-heading: 700;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+  --color-bronze: var(--bronze);
+  --color-silver: var(--silver);
+  --color-gold: var(--gold);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
-    @apply text-foreground font-base bg-background;
-    /* The global transition above will handle the body's background and text color changes. */
+    @apply bg-bg text-fg font-sans antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading;
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
   }
 }
 
-@theme {
-  --font-base: "JetBrains Mono", monospace;
-  --font-heading: "Roboto Mono", monospace;
+.bg-grid {
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Packets travelling along the hero pipeline */
+@keyframes flow-x {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(400%); }
+}
+@keyframes flow-y {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(400%); }
+}
+.packet-x { animation: flow-x 2.4s linear infinite; }
+.packet-y { animation: flow-y 2.4s linear infinite; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .packet-x, .packet-y, .pulse-dot { animation: none; }
 }
