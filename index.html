@@ -1,35 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./src/assets/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhananjay Gupta - Data Engineer</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Google Cloud Certified Data Engineer with 4+ years of experience building cloud-native data architectures on Azure. Currently at Footasylum, building automated ELT pipelines and cloud-native data solutions." />
-    <meta name="keywords" content="Data Engineer, Cloud Architecture, Azure, GCP, ETL, ELT, Python, SQL, PySpark, Databricks, Azure Data Factory" />
+    <title>Dhananjay Gupta · Data Engineer</title>
+    <meta name="description" content="Data Engineer in Manchester, UK with 4+ years building production pipelines on Azure Databricks and Google Cloud. Databricks Certified Data Engineer Professional and Google Cloud Professional Data Engineer." />
     <meta name="author" content="Dhananjay Gupta" />
+    <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0e13" media="(prefers-color-scheme: dark)" />
 
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="Dhananjay Gupta - Data Engineer" />
-    <meta property="og:description" content="Google Cloud Certified Data Engineer with 4+ years of experience building cloud-native data architectures. Specializing in ETL/ELT pipelines, Azure, and real-time analytics." />
-    <meta property="og:image" content="https://dhananjaygupta-de.vercel.app/src/assets/me.jpg" />
-    <meta property="og:image:alt" content="Dhananjay Gupta - Data Engineer" />
-    <meta property="og:url" content="https://dhananjaygupta-de.vercel.app/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Dhananjay Gupta Portfolio" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Dhananjay Gupta - Data Engineer" />
-    <meta name="twitter:description" content="Google Cloud Certified Data Engineer with 4+ years of experience building cloud-native data architectures and ELT pipelines." />
-    <meta name="twitter:image" content="https://dhananjaygupta-de.vercel.app/src/assets/me.jpg" />
-
-    <!-- Additional Meta Tags -->
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
+    <!-- Change this URL when the custom domain goes live -->
     <link rel="canonical" href="https://dhananjaygupta-de.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dhananjaygupta-de.vercel.app/" />
+    <meta property="og:site_name" content="Dhananjay Gupta" />
+    <meta property="og:title" content="Dhananjay Gupta · Data Engineer" />
+    <meta property="og:description" content="Production data pipelines on Azure Databricks and Google Cloud: batch and streaming, incremental, tested." />
+    <meta property="og:image" content="https://dhananjaygupta-de.vercel.app/me.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Dhananjay Gupta · Data Engineer" />
+    <meta name="twitter:description" content="Production data pipelines on Azure Databricks and Google Cloud." />
+    <meta name="twitter:image" content="https://dhananjaygupta-de.vercel.app/me.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dhananjay Gupta",
+        "jobTitle": "Data Engineer",
+        "address": { "@type": "PostalAddress", "addressLocality": "Manchester", "addressCountry": "GB" },
+        "url": "https://dhananjaygupta-de.vercel.app/",
+        "sameAs": ["https://github.com/Fury0508", "https://www.linkedin.com/in/dhananjay-g/"]
+      }
+    </script>
+
+    <!-- Apply the saved or system theme before first paint to avoid a flash -->
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
